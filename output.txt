@@ -1,0 +1,15 @@
+form 3 to 3.40 
+make a sign in and sign out logic  and form
+make a page dosnt reload 
+preform the buttons in the head 
+
+automation test from 4.40 to 
+
+test data base
+auth test => 3.54 to 4.23 doesnot understand
+
+4.24          => deploy in git hub and render
+
+stopeed at 4.38
+
+4:42

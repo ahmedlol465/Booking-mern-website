@@ -1,0 +1,24 @@
+npm i @types/cors @types/node ts-node typescript nodemon --save-dev
+npm i express cors dotenv mongodb mongoose
+npm init
+npm install --save-dev @types/express
+npm create @vite@latest
+npm i mongoose
+npm install -D tailwindcss postcss autoprefixer
+npx tailwind init -p
+
+# npm i bcryptjs jsonwebtoken
+npm i @types/bcryptjs @types/jsonwebtoken --save-dev
+ npm i express-validator
+ 
+ npm i react-query
+
+ npm i cookie-parser
+ npm i --save-dev @types/cookie-parser
+
+ npm i cross-env
+
+ # test auth 
+ npm init playwright@latest    => frame work to test auth
+
+npx tsc --init       => create ts config file

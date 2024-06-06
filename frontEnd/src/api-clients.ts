@@ -21,7 +21,7 @@ export const register = async (formData: RegisterForm) => {
 }
 
 export const signIn = async(formData: SignInFormData) => {
-    const response = await fetch(`${API_BASE_URL}/api/auth/login`, {
+    const response = await fetch(`${API_BASE_URL}/api/auth/logIn`, {
         method: "POST",
         credentials: "include", // to return the cookie
         headers: {
@@ -59,4 +59,22 @@ export const signOut = async () => {
     if(!response.ok) {
         throw new Error("Error in sign out")
     }
+}
+
+
+
+
+
+
+export const addMyHotel = async (hotelFormData: FormData) => {
+    const response = await fetch(`${API_BASE_URL}/api/my-hotels`, {
+        method: "POST",
+        credentials: "include",
+        body: hotelFormData
+    })
+    if(!response.ok) {
+        throw new Error("Error in adding hotel")
+    }
+
+    return response.json()
 }

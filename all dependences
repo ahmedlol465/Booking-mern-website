@@ -22,3 +22,7 @@ npm i @types/bcryptjs @types/jsonwebtoken --save-dev
  npm init playwright@latest    => frame work to test auth
 
 npx tsc --init       => create ts config file
+
+npm install cloudinary
+npm i multer
+npm i --save-dev @types/multer

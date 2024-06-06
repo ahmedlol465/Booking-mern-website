@@ -13,3 +13,8 @@ auth test => 3.54 to 4.23 doesnot understand
 stopeed at 4.38
 
 4:42
+
+4:50  connection cloudinary
+and finish the api my-hotel 
+
+5:28  => start create hotel form (fron end)

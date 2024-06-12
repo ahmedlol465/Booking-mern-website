@@ -18,3 +18,10 @@ stopeed at 4.38
 and finish the api my-hotel 
 
 5:28  => start create hotel form (fron end)
+creating the gui and integrate them with the back end 
+
+6:51: then test them 
+
+fix the test ahmed plz
+
+7:6

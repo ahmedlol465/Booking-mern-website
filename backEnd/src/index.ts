@@ -36,6 +36,12 @@ app.use("/api/my-hotels", hotelRoutes)
 
 
 
+app.get("*", (req: Request, res: Response) => {
+    res.sendFile(path.join(__dirname, "../../frontEnd/dist/index.html"))
+})
+
+
+
 app.listen(3002, () => {
     console.log("server is running...");
     

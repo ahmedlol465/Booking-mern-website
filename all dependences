@@ -26,3 +26,6 @@ npx tsc --init       => create ts config file
 npm install cloudinary
 npm i multer
 npm i --save-dev @types/multer
+
+
+npm i react-icons

@@ -1,4 +1,3 @@
-
 import {
   BrowserRouter as Router,
   Route,
@@ -11,6 +10,7 @@ import SignIn from "./pages/SignIn";
 import { useAppContext } from "./context/AppContext";
 import AddHotel from "./pages/AddHotel";
 import MyHotels from "./pages/MyHotels";
+import EditHotel from "./pages/EditHotel";
 
 
 
@@ -19,6 +19,7 @@ const App = () => {
   return(
     <Router>
       <Routes>
+        
         <Route path="/" element={<Layout>
           <p>Home page</p>
         </Layout>} />
@@ -47,6 +48,13 @@ const App = () => {
           <Route path="/add-hotel" element={
             <Layout>
               <AddHotel/>
+            </Layout>
+          }
+          />
+          
+          <Route path="/Edit-hotel/:hotelId" element={
+            <Layout>
+              <EditHotel/>
             </Layout>
           }
             />

@@ -4,7 +4,6 @@ import { BookingType, HotelSearchResponse } from "../shared/types";
 import { param, validationResult } from "express-validator";
 import Stripe from "stripe";
 import verifyToken from "../middleware/auth";
-import { ClientSession } from "mongodb";
 
 
 const stripe = new Stripe(process.env.STRIPE_API_KEY as string)
@@ -92,6 +91,7 @@ router.post("/:hotelId/bookings/payment-intent", verifyToken, async(req: Request
     // 1.total coast
     // 2.hotelId
     // 3.userId
+    
 
     
     const { numberOfNights } = req.body
@@ -104,7 +104,6 @@ router.post("/:hotelId/bookings/payment-intent", verifyToken, async(req: Request
     }
 
     const totalCoast = (hotel.pricePerNight * numberOfNights) * 100
-// console.log("totalCoast", totalCoast);
 
     const paymentIntent = await stripe.paymentIntents.create({
         amount: totalCoast,
@@ -132,6 +131,8 @@ router.post("/:hotelId/bookings/payment-intent", verifyToken, async(req: Request
 
 
 router.post("/:hotelId/bookings", verifyToken, async(req: Request, res: Response) => {
+
+    
 
     try {
 

@@ -85,5 +85,14 @@ await page.getByPlaceholder("Check-out Date").fill(formateData)
 
   await expect(page.getByText("Booking Saved!")).toBeVisible()
 
+  await page.getByRole("link", { name: "My Booking" }).click()
+  await expect(page.getByText("Dublin GetWay")).toBeVisible()
+  
 
-  })
+
+})
+  
+
+
+
+

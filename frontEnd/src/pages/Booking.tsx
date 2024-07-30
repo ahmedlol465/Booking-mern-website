@@ -34,6 +34,7 @@ const Booking = () => {
     }, [search.checkIn, search.checkOut])
 
     const { data: paymentIntentData } = useQuery("createPaymentIntent", () => apiClint.createPaymenyIntent(hotelId as string, numberOfNights.toString()), {
+        
         enabled: !!hotelId && numberOfNights > 0
     })
 
@@ -41,6 +42,7 @@ const Booking = () => {
     const { data: currentUser } = useQuery("fetchCurrentUser", 
         apiClint.fetchCurrentUser
     )
+    
 
     if(!hotel) return <div>no hotel found</div>
 

@@ -44,3 +44,5 @@ adding the filter
 
 
 11.23 test the search 
+
+11:32 => hotel details page

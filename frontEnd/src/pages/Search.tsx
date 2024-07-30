@@ -40,6 +40,8 @@ const Search = () => {
         
     })
 
+    
+
     const handleStareChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const starRating = event.target.value
 
@@ -75,9 +77,7 @@ const Search = () => {
         )
     }
 
-    const handleSortOption = (event: React.ChangeEvent<HTMLSelectElement>) => {
-        setSortOption(event.target.value)
-    }
+
 
 
     return (

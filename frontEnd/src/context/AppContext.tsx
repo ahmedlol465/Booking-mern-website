@@ -3,10 +3,8 @@ import Toast from "../components/Toast"
 import { useQuery } from "react-query"
 import * as apiClients from "../api-clients"
 import { loadStripe, Stripe } from "@stripe/stripe-js"
-import { log } from "console"
 
 const STRIPE_PUB_KEY = import.meta.env.VITE_STRIPE_PUB_KEY || ""
-// console.log(STRIPE_PUB_KEY, "key");
 
 type ToastMessage = {
     message: string

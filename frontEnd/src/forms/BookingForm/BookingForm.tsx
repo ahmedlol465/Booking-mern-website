@@ -7,6 +7,8 @@ import { useParams } from "react-router-dom"
 import { useMutation } from "react-query"
 import * as apiClient from "../../api-clients"
 import { useAppContext } from "../../context/AppContext"
+
+
 type Props = {
     currentUser: UserType
     paymentIntent: PaymentIntentResponse

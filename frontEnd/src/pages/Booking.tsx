@@ -5,7 +5,6 @@ import { useSearchContext } from "../context/SearchContext"
 import { useParams } from "react-router-dom"
 import { useEffect, useState } from "react"
 import BookingDetailsSummary from "../components/BookingDetailsSummary"
-import { log } from "console"
 import { Elements } from "@stripe/react-stripe-js"
 import { useAppContext } from "../context/AppContext"
 

@@ -52,3 +52,38 @@ test("should show hotel details", async({ page }) => {
     await expect(page.getByRole("button", { name: "BookNow" })).toBeVisible();
   
 })
+
+
+test("should book hotel", async({ page }) => {
+  await page.goto(UI_URL)
+
+    
+  await page.getByPlaceholder("Where do you want to go?").fill("das")
+
+  const date = new Date()
+  date.setDate(date.getDate() + 3)
+  const formateData = date.toISOString().split("T")[0]
+await page.getByPlaceholder("Check-out Date").fill(formateData)
+
+
+  await page.getByRole("button", {name: "Search"}).click()
+
+    await page.getByText("Dublin GetWay").click();
+    
+    await page.getByRole("button", { name: "BookNow" }).click()
+
+  await expect(page.getByText("Total Cost: $66.00")).toBeVisible()
+
+  const stripeFrame = page.frameLocator("iframe").first()
+  await stripeFrame.locator('[placeholder="Card number"]').fill("4242 4242 4242 4242")
+  await stripeFrame.locator('[placeholder="MM / YY"]').fill("04.30")
+
+  await stripeFrame.locator('[placeholder="CVC"]').fill("242")
+  await stripeFrame.locator('[placeholder="ZIP"]').fill("24225")
+  
+  await page.getByRole("button", { name: "Confirm Booking" }).click()
+
+  await expect(page.getByText("Booking Saved!")).toBeVisible()
+
+
+  })

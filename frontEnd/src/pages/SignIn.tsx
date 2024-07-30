@@ -26,7 +26,7 @@ const SignIn = () => {
             // navigate the home page
             showToast({message: "sign in successfull", type: "SUCCESS"});
             await queryClient.invalidateQueries("validateToken") // reload automataclly 
-            console.log(location.state?.from?.pathname);
+            // console.log(location.state?.from?.pathname);
             
             navigate(location.state?.from?.pathname || "/")
         },

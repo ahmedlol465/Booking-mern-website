@@ -52,3 +52,12 @@ stoped at 12:06
 
 12:19 => finish details page and will make the test 
 
+
+
+12:24  => save search in the storage
+
+12:32  =>  booking confirmation user Details
+
+14:24 finish the the book hotel 
+and finish stripe with test
+

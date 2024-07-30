@@ -33,3 +33,9 @@ npm i react-icons
 
 
 npm i react-dispatcher
+
+
+npm i stripe
+
+
+ npm i --save @stripe/react-stripe-js @stripe/stripe-js  

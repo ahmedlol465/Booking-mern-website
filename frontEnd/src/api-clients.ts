@@ -1,9 +1,27 @@
 import { RegisterForm } from "./pages/Register"
 import { SignInFormData } from "./pages/SignIn";
-import { HotelSearchResponse, HotelType } from "../../backEnd/src/shared/types";
+import { HotelSearchResponse, HotelType, PaymentIntentResponse, UserType } from "../../backEnd/src/shared/types";
+import { BookingFormData } from "./forms/BookingForm/BookingForm";
 
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_UEL || "";
+
+
+export const fetchCurrentUser = async (): Promise<UserType> => { 
+    const response = await fetch(`${API_BASE_URL}/api/users/me`, {
+        credentials: "include"
+    });
+
+    if(!response.ok) {
+        throw new Error("Error in fetching user")
+    }
+    return response.json()
+
+}
+
+
+
+
 export const register = async (formData: RegisterForm) => {
     const response = await fetch(`${API_BASE_URL}/api/users/signUp`, {
         method: "POST",
@@ -190,3 +208,49 @@ export const fetchHotelById = async (hotelId: string): Promise<HotelType> => {
     return response.json()
 
 }
+
+
+export const createPaymenyIntent = async(hotelId: string, numberOfNights: string): Promise<PaymentIntentResponse> => {
+    const response = await fetch(`${API_BASE_URL}/api/hotels/${hotelId}/bookings/payment-intent`, {
+
+        credentials: "include",
+        method: "POST",
+        body: JSON.stringify({
+            numberOfNights
+        }),
+        headers: {
+            "Content-Type": "application/json"
+        }
+    })
+
+        // console.log("res", response);
+        
+    if(!response.ok) {  
+        throw new Error("Error in creating payment intent")
+    }
+
+    return response.json()
+}
+
+
+
+export const createBooking = async(formData: BookingFormData) => {
+    const response = await fetch(`${API_BASE_URL}/api/hotels/${formData.hotelId}/bookings`, {
+        method: "POST",
+
+        headers: {
+            "Content-Type": "application/json"
+        },
+
+        body: JSON.stringify(formData),
+        credentials: "include",
+    })
+
+    if (!response.ok) {
+        throw new Error("Error in creating booking")
+    }
+
+    // return response.json()
+
+    }
+    

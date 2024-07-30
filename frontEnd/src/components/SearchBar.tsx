@@ -95,7 +95,7 @@ const SearchBar = () => {
                     endDate={checkOut}
                     minDate={new Date()}
                     maxDate={new Date(new Date().setFullYear(new Date().getFullYear() + 1))}
-                    placeholderText="Check in Date"
+                    placeholderText="Check-out Date"
                     className="min-w-full bg-white p-2 focus:outline-none"
                     wrapperClassName="min-w-full"
                     />

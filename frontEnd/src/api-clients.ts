@@ -1,6 +1,6 @@
 import { RegisterForm } from "./pages/Register"
 import { SignInFormData } from "./pages/SignIn";
-import { HotelType } from "../../backEnd/src/shared/types";
+import { HotelSearchResponse, HotelType } from "../../backEnd/src/shared/types";
 
 
 const API_BASE_URL = import.meta.env.VITE_API_BASE_UEL || "";
@@ -117,4 +117,61 @@ export const updatedMyHotelById = async (hotelFormData: FormData) => {
         throw new Error("Error in fetching hotels")
     }
     return response.json()
+}
+
+
+
+
+export type SearchPrams = {
+    destination?: string
+    checkIn?: string
+    checkOut?: string
+    adultCount?: string
+    childCount?: string  
+    page?: string
+    facilities?: string[]
+    types?: string[]
+    stars?: string[]
+    maxPrice?: string
+    // minPrice?: string
+    sortOption?: string
+}
+
+
+export const searchHotels = async (searchParams: SearchPrams): Promise<HotelSearchResponse> => {
+
+    const quertParams = new URLSearchParams()
+    // send in params
+    quertParams.append("destination", searchParams.destination  ||  "")
+
+    quertParams.append("checkIn", searchParams.checkIn || "")
+    quertParams.append("checkOut", searchParams.checkOut || "")
+    quertParams.append("adultCount", searchParams.adultCount || "")
+    quertParams.append("childCount", searchParams.childCount || "")
+    quertParams.append("page", searchParams.page || "")
+    
+    quertParams.append("maxPrice", searchParams.maxPrice || "")
+    // quertParams.append("stars", searchParams.stars || "")
+    quertParams.append("sortOption", searchParams.sortOption || "")
+    
+
+
+
+    searchParams.facilities?.forEach((facility) => quertParams.append("facility", facility))
+
+    searchParams.types?.forEach((type) => quertParams.append("type", type))
+
+    searchParams.stars?.forEach((star) => quertParams.append("stars", star))
+
+    
+    const response = await fetch(`${API_BASE_URL}/api/hotels/search?${quertParams}`)
+
+
+
+    if(!response.ok) {
+        throw new Error("Error in fetching hotels")
+    }
+
+    return response.json() 
+
 }

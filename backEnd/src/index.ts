@@ -7,7 +7,8 @@ import authRoutes from "./routes/auth"
 import cookieParser from 'cookie-parser'
 import path from "path";
 import { v2 as cloudinary } from 'cloudinary'
-import hotelRoutes from "./routes/my-hotels"
+import myhotelRoutes from "./routes/my-hotels"
+import hotelRoutes from "./routes/hotel"
 
 
 cloudinary.config({
@@ -32,7 +33,9 @@ app.use(express.static(path.join(__dirname, "../../frontEnd/dist")))
 
 app.use("/api/users", userRoutes)
 app.use("/api/auth", authRoutes)
-app.use("/api/my-hotels", hotelRoutes)
+app.use("/api/my-hotels", myhotelRoutes)
+
+app.use("/api/hotels", hotelRoutes)
 
 
 

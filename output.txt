@@ -29,3 +29,18 @@ fix the test ahmed plz
 
 
 8.48 edit hotel
+
+9.05 finish deployment edit hotel 
+
+9.6  using filter and sorting in the pake 
+
+10.22 make the search with back and front end
+
+10.30 make the search pagination page 
+
+
+10:38:50  stoped finish pagination
+adding the filter
+
+
+11.23 test the search 

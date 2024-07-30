@@ -17,7 +17,7 @@ const Header = () => {
                         <Link className="flex item-center text-white px-3 font-bold hover:bg-blue-600" to="/my-hotels">My Hotels</Link>
                         <SignOutButton/>
                     </> )
-                    :   (<Link to="/sign-in" className="flex item-center bg-white text-blue-600 px-3 font-bold hover:bg-gray-100"
+                    :   (<Link to="/sign-in" className="m-auto flex item-center bg-white text-blue-600 px-5 py-2 font-bold hover:bg-gray-100"
                              >
                            Sign In
                             </Link>

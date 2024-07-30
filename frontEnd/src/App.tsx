@@ -15,6 +15,7 @@ import Search from "./pages/Search";
 import Details from "./pages/Details";
 import Booking from "./pages/Booking";
 import MyBookings from "./pages/MyBookings";
+import Home from "./pages/Home";
 
 
 const App = () => {
@@ -24,7 +25,7 @@ const App = () => {
       <Routes>
         
         <Route path="/" element={<Layout>
-          <p>Home page</p>
+          <Home/>
         </Layout>} />
 
 

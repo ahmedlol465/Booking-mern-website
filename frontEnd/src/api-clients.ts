@@ -264,6 +264,16 @@ export const createBooking = async(formData: BookingFormData) => {
     }
     
 
+    export const fetchHotels = async (): Promise<HotelType[]> => {
+        const response = await fetch(`${API_BASE_URL}/api/hotels`)
+        
+        if(!response.ok) {
+            throw new Error("Error in fetching booking")
+        }
+        return response.json()
+    }
+
+
     export const fetchMyBooking = async (): Promise<HotelType[]> => {
         const response = await fetch(`${API_BASE_URL}/api/my-bookings`, {
             credentials: "include"

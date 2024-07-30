@@ -1,7 +1,11 @@
 import { useFormContext } from "react-hook-form";
 import { HotelFormData } from "./ManageHotelForm";
+import { useSearchContext } from "../../../context/SearchContext";
 
 const GuestsSection = () => {
+
+    
+
     const {
         register,
         formState: { errors },

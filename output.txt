@@ -46,3 +46,9 @@ adding the filter
 11.23 test the search 
 
 11:32 => hotel details page
+
+
+stoped at 12:06
+
+12:19 => finish details page and will make the test 
+

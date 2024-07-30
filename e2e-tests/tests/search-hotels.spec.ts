@@ -35,3 +35,20 @@ test("should allow user to add a new hotel", async ({ page }) => {
     
  
 })
+
+
+
+test("should show hotel details", async({ page }) => {
+  await page.goto(UI_URL)
+
+    
+  await page.getByPlaceholder("Where do you want to go?").fill("das")
+  await page.getByRole("button", {name: "Search"}).click()
+
+    await page.getByText("Dublin GetWay").click();
+    
+  await expect(page).toHaveURL(/detail/)
+
+    await expect(page.getByRole("button", { name: "BookNow" })).toBeVisible();
+  
+})
